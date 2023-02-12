@@ -34,14 +34,6 @@ const userHome = (ctrl: Ctrl) => [
         },
         'Play a rated 10+0 game with a random real opponent'
       ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playPool(10, 0) },
-        },
-        'Inventory'
-      ),
     ]),
     h('h2.mt-5', 'Games in progress'),
     h('div.games', renderGames(ctrl.games)),

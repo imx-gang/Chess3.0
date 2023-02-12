@@ -7,6 +7,7 @@ import OngoingGames from './ongoingGames';
 import { SeekCtrl } from './seek';
 import ChallengeCtrl from './challenge';
 import TvCtrl from './tv';
+import InventoryAccess from './inventoryaccess';
 
 export class Ctrl {
   auth: Auth = new Auth();
@@ -101,8 +102,8 @@ export class Ctrl {
   openInventory = async () => {
     this.page = 'inventory';
     this.redraw();
-    this.tv = await TvCtrl.open(this);
+    //yadda yadda get stuff from inventoryaccess.ts
     this.redraw();
   };
 }
-}
+
