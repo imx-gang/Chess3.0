@@ -168,7 +168,7 @@ const anonInventory = () => [
 
 const renderAbout = () =>
   h('div.about', [
-    h('p', 'Welcome to Chess 3.0, a new chess platform built using ImmutableX blockchain technology and the Lichess API. Play the age old classic game and earn, collect, trade, buy, sell, and play with our NFT chess pieces!'),
+    h('p', 'Welcome to CH3SS, a new chess platform built using ImmutableX blockchain technology and the Lichess API. Play the age old classic game and earn, collect, trade, buy, sell, and play with our NFT chess pieces!'),
     h('ul', [
       h(
         'li',

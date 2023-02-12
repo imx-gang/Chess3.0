@@ -18,7 +18,7 @@ const renderNavBar = (ctrl: Ctrl) =>
         {
           attrs: href('/'),
         },
-        'Chess 3.0'
+        'CH3SS'
       ),
       h(
         'button.navbar-toggler',
