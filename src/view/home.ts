@@ -32,7 +32,7 @@ const userHome = (ctrl: Ctrl) => [
           attrs: { type: 'button' },
           on: { click: () => ctrl.playPool(10, 0) },
         },
-        'Play a rated 10+0 game with a random opponent'
+        'Play a rated 10+0 game with a random real opponent'
       ),
     ]),
     h('h2.mt-5', 'Games in progress'),
@@ -95,16 +95,16 @@ const anonHome = () => [
 
 const renderAbout = () =>
   h('div.about', [
-    h('p', 'This is an example for a fully client side OAuth app that uses various Lichess APIs.'),
+    h('p', 'Welcome to Chess 3.0, a new chess platform built using ImmutableX blockchain technology and the Lichess API. Play the age old classic game and earn, collect, trade, buy, sell, and play with our NFT chess pieces!'),
     h('ul', [
       h(
         'li',
         h(
           'a',
           {
-            attrs: { href: 'https://github.com/lichess-org/api-demo' },
+            attrs: { href: 'https://github.com/Hadi-Khan-Projects/Chess3.0' },
           },
-          'Source code of this demo'
+          'Have a peek at our GitHub repository'
         )
       ),
       h(
@@ -112,9 +112,9 @@ const renderAbout = () =>
         h(
           'a',
           {
-            attrs: { href: 'https://github.com/lichess-org/api-demo#lichess-oauth-app-demo' },
+            attrs: { href: 'https://www.immutable.com' },
           },
-          'README'
+          'Find out more about ImmutableX'
         )
       ),
       h(
@@ -124,15 +124,8 @@ const renderAbout = () =>
           {
             attrs: { href: 'https://lichess.org/api' },
           },
-          'Lichess.org API documentation'
+          'Learn more about the Lichess API'
         )
       ),
-    ]),
-    h('p', [
-      'Press ',
-      h('code', '<Ctrl+Shift+j>'),
-      ' to open your browser console and view incoming events.',
-      h('br'),
-      'Check out the network tab as well to view API calls.',
     ]),
   ]);
