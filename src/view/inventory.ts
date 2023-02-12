@@ -8,16 +8,16 @@ import { href } from '../routing';
 export const renderInventory: Renderer = ctrl => (ctrl.auth.me ? userInventory(ctrl) : anonInventory());
 
 const userInventory = (ctrl: Ctrl) => [
+  
   h('div', [
     
-
-
-
 
 
     //ImmutableX inventory shown here
 
     //User can select from his inventory what he wants for each of the 12 Pieces:
+    //Inventory items should be pulled from users ImmutableX library and the Gifs should be put in the src/userInventory folder
+
     //White King
     //White Queen
     //White Bishop
@@ -41,43 +41,6 @@ const userInventory = (ctrl: Ctrl) => [
     renderAbout(),
   ]),
 ];
-
-const renderGames = (ongoing: OngoingGames) =>
-  ongoing.games.length ? ongoing.games.map(renderGameWidget) : [h('p', 'No ongoing games at the moment')];
-
-const renderGameWidget = (game: Game) =>
-  h(
-    `a.game-widget.text-decoration-none.game-widget--${game.id}`,
-    {
-      attrs: href(`/game/${game.gameId}`),
-    },
-    [
-      h('span.game-widget__opponent', [
-        h('span.game-widget__opponent__name', game.opponent.username || 'Anon'),
-        game.opponent.rating && h('span.game-widget__opponent__rating', game.opponent.rating),
-      ]),
-      h(
-        'span.game-widget__board.cg-wrap',
-        {
-          hook: {
-            insert(vnode) {
-              const el = vnode.elm as HTMLElement;
-              Chessground(el, {
-                fen: game.fen,
-                orientation: game.color,
-                lastMove: game.lastMove.match(/.{1,2}/g),
-                viewOnly: true,
-                movable: { free: false },
-                drawable: { visible: false },
-                coordinates: false,
-              });
-            },
-          },
-        },
-        'board'
-      ),
-    ]
-  );
 
 const anonInventory = () => [
   h('div.login.text-center', [

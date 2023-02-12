@@ -100,9 +100,10 @@ export class Ctrl {
   };
 
   openInventory = async () => {
-    this.page = 'inventory';
+    this.page = 'inventoryaccess';
     this.redraw();
-    //yadda yadda get stuff from inventoryaccess.ts
+    //yadda yadda Immutable X stuff goes here
+    this.tv = await TvCtrl.open(this);
     this.redraw();
   };
 }

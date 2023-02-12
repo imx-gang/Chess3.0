@@ -36,8 +36,7 @@ const renderNavBar = (ctrl: Ctrl) =>
       ),
       h('div#navbarSupportedContent.collapse.navbar-collapse', [
         h('ul.navbar-nav.me-auto.mb-lg-0"', [
-          h(
-            'li.nav-item',
+          h('li.nav-item', 
             h(
               'a.nav-link',
               {
@@ -47,6 +46,16 @@ const renderNavBar = (ctrl: Ctrl) =>
               'Watch TV'
             )
           ),
+          h('li.nav-item', 
+            h(
+              'a.nav-link',
+              {
+                class: { active: ctrl.page == 'inventoryaccess' },
+                attrs: href('/inventoryaccess'),
+              },
+              'Inventory'
+            )
+          )
         ]),
         h('ul.navbar-nav', [colorpicker(), ctrl.auth.me ? userNav(ctrl.auth.me) : anonNav()]),
       ]),

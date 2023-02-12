@@ -16,7 +16,7 @@ const userHome = (ctrl: Ctrl) => [
           attrs: { type: 'button' },
           on: { click: ctrl.playAi },
         },
-        'Play the Lichess AI'
+        'Play StockFish AI'
       ),
       h(
         'button.btn.btn-outline-primary.btn-lg',
