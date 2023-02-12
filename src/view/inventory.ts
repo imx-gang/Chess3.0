@@ -5,46 +5,38 @@ import { Game, Renderer } from '../interfaces';
 import OngoingGames from '../ongoingGames';
 import { href } from '../routing';
 
-export const renderHome: Renderer = ctrl => (ctrl.auth.me ? userHome(ctrl) : anonHome());
+export const renderInventory: Renderer = ctrl => (ctrl.auth.me ? userInventory(ctrl) : anonInventory());
 
-const userHome = (ctrl: Ctrl) => [
+const userInventory = (ctrl: Ctrl) => [
   h('div', [
-    h('div.btn-group.mt-5', [
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: ctrl.playAi },
-        },
-        'Play the Lichess AI'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playMaia(10, 0) },
-        },
-        'Play a casual 10+0 game with the maia1 BOT'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playPool(10, 0) },
-        },
-        'Play a rated 10+0 game with a random real opponent'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playPool(10, 0) },
-        },
-        'Inventory'
-      ),
-    ]),
-    h('h2.mt-5', 'Games in progress'),
-    h('div.games', renderGames(ctrl.games)),
+    
+
+
+
+
+
+    //ImmutableX inventory shown here
+
+    //User can select from his inventory what he wants for each of the 12 Pieces:
+    //White King
+    //White Queen
+    //White Bishop
+    //White Knight
+    //White Rook
+    //White Pawn
+    //Black ...
+    //Black ...
+    //Black ...
+    //Black ...
+    //Black ...
+    //Black ...
+
+    //if nothing selected use base set
+    //see scss/_chessground.cburnett.css to see how images are stored as Base64 GIFS
+    //HANDY DANDY TOOL TO CONVERY GIF -> DATA URI FORMAT: https://base64.guru/converter/encode/image
+
+
+
     h('h2.mt-5.mb-3', 'About'),
     renderAbout(),
   ]),
@@ -87,7 +79,7 @@ const renderGameWidget = (game: Game) =>
     ]
   );
 
-const anonHome = () => [
+const anonInventory = () => [
   h('div.login.text-center', [
     renderAbout(),
     h('div.big', [h('p', 'Please log in to continue.')]),

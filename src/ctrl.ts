@@ -97,4 +97,12 @@ export class Ctrl {
     this.tv = await TvCtrl.open(this);
     this.redraw();
   };
+
+  openInventory = async () => {
+    this.page = 'inventory';
+    this.redraw();
+    this.tv = await TvCtrl.open(this);
+    this.redraw();
+  };
+}
 }

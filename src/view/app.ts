@@ -5,6 +5,7 @@ import layout from './layout';
 import { renderChallenge } from './challenge';
 import { renderGame } from './game';
 import { renderHome } from './home';
+import { renderInventory } from './inventory';
 import { renderSeek } from './seek';
 import { renderTv } from './tv';
 
@@ -18,6 +19,7 @@ const selectRenderer = (ctrl: Ctrl): Renderer => {
   if (ctrl.page == 'seek' && ctrl.seek) return renderSeek(ctrl.seek);
   if (ctrl.page == 'challenge' && ctrl.challenge) return renderChallenge(ctrl.challenge);
   if (ctrl.page == 'tv') return ctrl.tv ? renderTv(ctrl.tv) : renderLoading;
+  if (ctrl.page == 'inventory') return renderInventory;
   return renderNotFound;
 };
 
