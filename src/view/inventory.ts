@@ -47,7 +47,7 @@ const images : any = {
     piecesDir + "Medieval/MedievalBlackKing.gif",
   ],
   "Black Queen" : [
-    piecesDir + 'Base/BaseBlackQeen.gif',
+    piecesDir + 'Base/BaseBlackQueen.gif',
     piecesDir + 'Gold/GoldBlackQueen.gif',
     piecesDir + "Medieval/MedievalBlackQueen.gif",
   ],
