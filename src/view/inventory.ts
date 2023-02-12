@@ -7,55 +7,69 @@ import { href } from '../routing';
 
 export const renderInventory: Renderer = ctrl => (ctrl.auth.me ? userInventory(ctrl) : anonInventory());
 
+const width = 50;
+const height = 50;
 const piecesDir : string = "./../ChessArt/";
 const images : any = {
-  whiteKing : [
+  "White King" : [
     piecesDir + 'Base/BaseWhiteKing.gif',
     piecesDir + 'Gold/GoldWhiteKing.gif',
+    piecesDir + "Medieval/MedievalWhiteKing.gif",
   ],
-  whiteQueen : [
+  "White Queen" : [
     piecesDir + 'Base/BaseWhiteQueen.gif',
     piecesDir + 'Gold/GoldWhiteQueen.gif',
+    piecesDir + "Medieval/MedievalWhiteQueen.gif",
   ],
-  whiteBishop : [
+  "White Bishop" : [
     piecesDir + 'Base/BaseWhiteBishop.gif',
     piecesDir + 'Gold/GoldWhiteBishop.gif',
+    piecesDir + "Medieval/MedievalWhiteBishop.gif",
   ],
-  whiteKnight : [
+  "White Knight" : [
     piecesDir + 'Base/BaseWhiteKnight.gif',
     piecesDir + 'Gold/GoldWhiteKnight.gif',
+    piecesDir + "Medieval/MedievalWhiteKnight.gif",
   ],
-  whiteRook : [ 
+  "White Rook" : [ 
     piecesDir + 'Base/BaseWhiteRook.gif',
     piecesDir + 'Gold/GoldWhiteRook.gif',
+    piecesDir + "Medieval/MedievalWhiteRook.gif",
   ],
-  whitePawn : [
+  "White Pawn" : [
     piecesDir + 'Base/BaseWhitePawn.gif',
     piecesDir + 'Gold/GoldWhitePawn.gif',
+    piecesDir + "Medieval/MedievalWhitePawn.gif",
   ],
-  blackKing : [
+  "Black King" : [
     piecesDir + 'Base/BaseBlackKing.gif',
     piecesDir + 'Gold/GoldBlackKing.gif',
+    piecesDir + "Medieval/MedievalBlackKing.gif",
   ],
-  blackQueen : [
-    piecesDir + 'Base/BaseBlackQueen.gif',
+  "Black Queen" : [
+    piecesDir + 'Base/BaseBlackQeen.gif',
     piecesDir + 'Gold/GoldBlackQueen.gif',
+    piecesDir + "Medieval/MedievalBlackQueen.gif",
   ],
-  blackBishop : [
+  "Black Bishop" : [
     piecesDir + 'Base/BaseBlackBishop.gif',
     piecesDir + 'Gold/GoldBlackBishop.gif',
+    piecesDir + "Medieval/MedievalBlackBishop.gif",
   ],
-  blackKnight : [
+  "Black Knight" : [
     piecesDir + 'Base/BaseBlackKnight.gif',
     piecesDir + 'Gold/GoldBlackKnight.gif',
+    piecesDir + "Medieval/MedievalBlackKnight.gif",
   ],
-  blackRook : [
+  "Black Rook" : [
     piecesDir + 'Base/BaseBlackRook.gif',
     piecesDir + 'Gold/GoldBlackRook.gif',
+    piecesDir + "Medieval/MedievalBlackRook.gif",
   ],
-  blackPawn : [
+  "Black Pawn" : [
     piecesDir + 'Base/BaseBlackPawn.gif',
     piecesDir + 'Gold/GoldBlackPawn.gif',
+    piecesDir + "Medieval/MedievalBlackPawn.gif",
   ],
 };
 
@@ -63,20 +77,20 @@ const userInventory = (ctrl: Ctrl) => [
   
   h('div', [
     h('h2.mt-5.mb-3', 'Inventory'),
-    //diplay image with src "images.whiteKing[0]"
+    //diplay image with src "images."White King[0]"
     h('div', [ 
-      renderInventoryRow('whiteKing'),
-      renderInventoryRow('whiteQueen'),
-      renderInventoryRow('whiteBishop'),
-      renderInventoryRow('whiteKnight'),
-      renderInventoryRow('whiteRook'),
-      renderInventoryRow('whitePawn'),
-      renderInventoryRow('blackKing'),
-      renderInventoryRow('blackQueen'),
-      renderInventoryRow('blackBishop'),
-      renderInventoryRow('blackKnight'),
-      renderInventoryRow('blackRook'),
-      renderInventoryRow('blackPawn'),
+      renderInventoryRow('White King'),
+      renderInventoryRow('White Queen'),
+      renderInventoryRow('White Bishop'),
+      renderInventoryRow('White Knight'),
+      renderInventoryRow('White Rook'),
+      renderInventoryRow('White Pawn'),
+      renderInventoryRow('Black King'),
+      renderInventoryRow('Black Queen'),
+      renderInventoryRow('Black Bishop'),
+      renderInventoryRow('Black Knight'),
+      renderInventoryRow('Black Rook'),
+      renderInventoryRow('Black Pawn'),
     ]),
     //ImmutableX inventory shown here
 
@@ -108,16 +122,34 @@ const userInventory = (ctrl: Ctrl) => [
 ];
 
 const renderInventoryRow = (pieceType : string) =>
-  h('div', [
-    h('img', {
-      attrs: {
-        src: images[pieceType][0],
-        width: '100',
-        height: '100',
-        //image placeholder text
-        alt: "Image of " + pieceType,
-      },
-    }),
+  h('div.mt-3', [  
+  h('h5', pieceType),
+  h('div.d-flex.flex-row', [
+      h('img', {
+        attrs: {
+          src: images[pieceType][0],
+          width: width.toString(),
+          height: height.toString(),
+          //image placeholder text
+          alt: "Image of " + pieceType,
+      }}),
+      h('img', {
+        attrs: {
+          src: images[pieceType][1],
+          width: width.toString(),
+          height: height.toString(),
+          //image placeholder text
+          alt: "Image of " + pieceType,
+      }}),
+      h('img', {
+        attrs: {
+          src: images[pieceType][2],
+          width: width.toString(),
+          height: height.toString(),
+          //image placeholder text
+          alt: "Image of " + pieceType,
+      }}),
+    ]),
   ]);
 
 const anonInventory = () => [
